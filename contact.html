@@ -1,0 +1,341 @@
+ <!doctype html>
+
+<html>
+    <head>
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <meta charset="utf-8">
+
+        <title>DB's Pizza</title>
+
+        <link rel="icon" href="https://tinyurl.com/logoFront" type="image/gif" sizes="16x16">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    </head>
+    <body>
+   
+
+   <div class="w3-top w3-hide-small">
+  <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+    <a href="index.html" class="w3-bar-item w3-button">HOME</a>
+     <a href="about.html"class="w3-button w3-xlarge w3-black">ABOUT</a>
+
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+      <form action="rick.html">
+
+        <div class="row">
+          <div class="col-50">
+            <h3>Billing Address</h3>
+            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+            <input type="text" id="fname" name="firstname"  placeholder="Name" required>
+            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+            <input type="text" id="email" name="email" placeholder="example@gmail.com">
+            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+            <input type="text" id="adr" name="address" placeholder="Kormangla">
+            <label for="city"><i class="fa fa-institution"></i> City</label>
+            <input type="text" id="city" name="city" placeholder="Udaipur">
+
+            <div class="row">
+              <div class="col-50">
+                <label for="state">State</label>
+                <input type="text" id="state" name="state" placeholder="Rajasthan">
+              </div>
+              <div class="col-50">
+                <label for="zip">Zip</label>
+                <input type="text" id="zip" name="zip" placeholder="112233">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-50">
+            <h3>Payment by Card </h3><h5>(optional)</h5>
+            <label for="fname">Accepted Cards</label>
+             <link rel="Stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <iclass="fa fa-cc-wells fargo" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            <label for="cname">Name on Card</label>
+            <input type="text" id="cname" name="cardname" placeholder="Dhairya Bordia">
+            <label for="ccnum">Credit card number</label>
+            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+            <label for="expmonth">Exp Month</label>
+            <input type="text" id="expmonth" name="expmonth" placeholder="September">
+
+            <div class="row">
+              <div class="col-50">
+                <label for="expyear">Exp Year</label>
+                <input type="text" id="expyear" name="expyear" placeholder="2024">
+              </div>
+              <div class="col-50">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="123">
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <label>
+          <input type="checkbox" name="sameadr"> Shipping address same as billing
+        </label>
+          <label>
+          <input type="checkbox" name="paydel"> Pay on Delivery
+        </label>
+                <script>
+      function play() {
+        var audio = document.getElementById("checkout-btn");
+        audio.play();
+      }
+
+    </script>
+
+   
+    <audio id="checkout-btn" src="haha.mp3"></audio>
+<a href="rick.html" target="_blank"><input type="button" value="Order!" onclick="play()" id="checkout-btn"></a>  </form>
+    </div>
+  </div>
+
+
+  
+
+    
+
+<style>
+  .row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.container {
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+}
+</style>
+<style>
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+* {box-sizing: border-box}
+
+/* Set a style for all buttons */
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Float cancel and delete buttons and add an equal width */
+.cancelbtn, .deletebtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add a color to the cancel button */
+.cancelbtn {
+  background-color: #ccc;
+  color: black;
+}
+
+/* Add a color to the delete button */
+.deletebtn {
+  background-color: #f44336;
+}
+
+/* Add padding and center-align text to the container */
+.container {
+  padding: 16px;
+  text-align: center;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #474e5d;
+  padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* The Modal Close Button (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and delete button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .deletebtn {
+    width: 100%;
+  }
+}
+
+</style>
+<button onclick="document.getElementById('id01').style.display='block'">Cancel Order</button>
+
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content" action="/action_page.php">
+    <div class="container">
+      <h1>Cancel Order</h1>
+      <p>Are you sure you want to cancel your order?</p>
+
+      <div class="clearfix">
+        <a href="contact.html"><button type="button" class="cancelbtn" >No</button></a>
+       <a href="index.html"> <button type="button" class="deletebtn" >Yes</button> </a>
+      </div>
+    </div>
+  </form>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+    </body>
+
+</html>

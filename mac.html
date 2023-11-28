@@ -1,0 +1,177 @@
+<!doctype html>
+
+<html>
+    <head>
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <meta charset="utf-8">
+
+        <title>DB's Pizza</title>
+
+        <link rel="icon" href="https://tinyurl.com/logoFront" type="image/gif" sizes="16x16">
+
+    </head>
+    <body>
+   <div class="w3-top w3-hide-small">
+  <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+    <a href="index.html" class="w3-bar-item w3-button">HOME</a>
+   
+     <a href="about.html"class="w3-button w3-xlarge w3-black">ABOUT</a>
+
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<marquee behivior="scroll" bgcolor="red" direction="left"> Hey guys,Sorry to state we are having issues adding more items in the menu. Click on any item to add to cart</marquee>
+<!-- Product listing -->
+<div id="products" class="w3-container w3-black w3-xxlarge w3-padding-64">
+<h1 class="w3-center w3-jumbo w3-padding-32">THE GREAT MENU</h1>
+<div class="w3-row w3-center w3-border w3-border-dark-grey">
+<a href="#pizza"><div class="w3-third w3-padding-large w3-red">Pizza</div></a>
+<a href="#pasta"><div class="w3-third w3-padding-large w3-hover-red">Drinks</div></a>
+<a href="#starters"><div class="w3-third w3-padding-large w3-hover-red">Starters</div></a>
+</div>
+<div id="pizza" class="w3-container w3-white w3-padding-45">   
+  <ul>
+    <li data-id="1" data-name="Cheese Pizza" data-price="2.42"><b> Cheese pizza </b>  <span class="w3-right w3-tag w3-dark-grey w3-round">$2.42</span></li>
+<br>
+    <li data-id="2" data-name="Peproni Pizza" data-price="5.56"><b>Peproni Pizza</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$5.56</span></li>
+<br>
+    <li data-id="3" data-name="Paneer Pizza" data-price="2.99"><b>Paneer Pizza</b> <span class="w3-tag w3-red w3-round">Sale!</span>
+<span class="w3-right w3-tag w3-dark-grey w3-round">$2.99</span></li>
+    <br>
+    <br>
+  </ul>
+</div>
+<div class="w3-row w3-center w3-border w3-border-dark-grey">
+<a href="#pizza"><div class="w3-third w3-padding-large w3-red">Pizza</div></a>
+<a href="#pasta"><div class="w3-third w3-padding-large w3-hover-red">Drinks</div></a>
+<a href="#starters"><div class="w3-third w3-padding-large w3-hover-red">Starters</div></a>
+</div>
+
+<div id="pasta" class="w3-container w3-white w3-padding-45">
+ <ul>
+    <li data-id="4" data-name="Fruit Juice" data-price="0.60"><b>Fruit Juice</b> <span class="w3-tag w3-grey w3-round">Popular</span>
+<span class="w3-right w3-tag w3-dark-grey w3-round">$0.60</span></li>
+<br>
+    <li data-id="5" data-name="Sprite" data-price="0.55"><b>Sprite</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$0.55</span></h1>
+<p class="w3-text-grey"></li>
+
+    <li data-id="6" data-name="Pepsi" data-price="0.50"><b>Pepsi</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$0.50</span></h1>
+<p class="w3-text-grey"></li>
+    <br>
+    <br>
+
+  </ul>
+<div class="w3-row w3-center w3-border w3-border-dark-grey">
+<a href="#pizza"><div class="w3-third w3-padding-large w3-red">Pizza</div></a>
+<a href="#pasta"><div class="w3-third w3-padding-large w3-hover-red">Drinks</div></a>
+<a href="#starters"><div class="w3-third w3-padding-large w3-hover-red">Starters</div></a>
+</div>
+<div id="starters" class="w3-container w3-white w3-padding-45">
+ <ul>
+    <li data-id="7" data-name="Lemonade" data-price="1.58"><b>Lemonade</b> <span class="w3-tag w3-grey w3-round">Mornings</span>
+<span class="w3-right w3-tag w3-dark-grey w3-round">$1.58</span></li>
+<br>
+    <li data-id="8" data-name="Breadsticks" data-price="1.40"><b>Breadsticks</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$1.40</span></h1>
+<p class="w3-text-grey"></li>
+    <br>
+    <li data-id="9" data-name="Garlic Bread" data-price="2.50"><b>Garlic bread</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$2.50</span></h1>
+<p class="w3-text-grey"></li>
+  </ul>
+  <br>
+  <br>
+
+<!-- Cart -->
+<div id="cart">
+  <h2>Cart</h2>
+  <ul id="cart-items">
+    <!-- Cart items will be dynamically added here -->
+  </ul>
+  <p id="cart-total">Total: $0</p>
+  <a href="contact.html"  id="checkout-btn" class="button">Checkout</a>
+  <script>
+
+    // Initialize cart
+let cartItems = [];
+
+// Add to cart
+function addToCart(item) {
+  const itemId = item.getAttribute("data-id");
+  const itemName = item.getAttribute("data-name");
+  const itemPrice = parseFloat(item.getAttribute("data-price"));
+
+  const cartItem = {
+    id: itemId,
+    name: itemName,
+    price: itemPrice
+  };
+
+  cartItems.push(cartItem);
+  updateCart();
+}
+
+// Update cart UI
+function updateCart() {
+  const cartItemsElement = document.getElementById("cart-items");
+  const cartTotalElement = document.getElementById("cart-total");
+
+  // Clear existing cart items
+  cartItemsElement.innerHTML = "";
+
+  // Populate cart items
+  let total = 0;
+  cartItems.forEach(item => {
+    const li = document.createElement("li");
+    li.innerText = `${item.name} - $${item.price}`;
+    cartItemsElement.appendChild(li);
+
+    total += item.price;
+  });
+
+  // Update cart total
+  cartTotalElement.innerText = `Total: $${total.toFixed(2)}`;
+}
+
+// Checkout
+function checkout() {
+  // Perform checkout logic here (e.g., payment processing, order creation, etc.)
+  // You can access the cart items using the `cartItems` array
+const array = ['cartItems']
+  // Clear the cart after checkout
+  cartItems = [];
+  updateCart();
+}
+
+// Add event listeners
+const products = document.querySelectorAll("#products li");
+products.forEach(product => {
+  product.addEventListener("click", () => addToCart(product));
+});
+
+const checkoutButton = document.getElementById("checkout-btn");
+checkoutButton.addEventListener("click", checkout);
+localStorage.setItem("Cart", "cart-items");
+    </script>
+</div>
+
+<style>
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+</style>
+
+    </body>
+
+</html> 

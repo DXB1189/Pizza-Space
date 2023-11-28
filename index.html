@@ -1,0 +1,414 @@
+<!doctype html>
+
+<html>
+    <head>
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <meta charset="utf-8">
+
+        <title>DB's Pizza</title>
+
+        <link rel="icon" href="https://tinyurl.com/logoFront" type="image/gif" sizes="16x16">
+
+    </head>
+    <body>
+   <div class="w3-top w3-hide-small">
+  <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+    <a href="index.html" class="w3-bar-item w3-button">HOME</a>
+   <a href="mac.html"class="w3-button w3-xlarge w3-black">MENU & ORDER</a>
+     <a href="about.html"class="w3-button w3-xlarge w3-black">ABOUT</a>
+
+  </div>
+</div>
+<br>
+<br>
+<br>
+<marquee behavior="scroll" bgcolor="red" direction="left">Welcome to DB's Pizza. Here we offer many types of popular pizzas and drinks. You can get started by ordering at your doorstep or Take away. Wait Wait... Because we have just opened so the first 20 orders will be FREE  </marquee>
+
+<div class="row">
+  <div class="column">
+    <img src="img1.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <img src="img2.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <img src="img3.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <img src="img4.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow">
+  </div>
+</div>
+
+<!-- The Modal/Lightbox -->
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 4</div>
+      <img src="img1.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 4</div>
+      <img src="img2.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 4</div>
+      <img src="img3.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">4 / 4</div>
+      <img src="img4.jpg" style="width:100%">
+    </div>
+
+    <!-- Next/previous controls -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <!-- Caption text -->
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+    <!-- Thumbnail image controls -->
+    <div class="column">
+      <img class="demo" src="img1.jpg" onclick="currentSlide(1)" >
+    </div>
+
+    <div class="column">
+      <img class="demo" src="img2.jpg" onclick="currentSlide(2)" >
+    </div>
+
+    <div class="column">
+      <img class="demo" src="img3.jpg" onclick="currentSlide(3)" >
+    </div>
+
+    <div class="column">
+      <img class="demo" src="img4.jpg" onclick="currentSlide(4)">
+    </div>
+  </div>
+</div>
+<style>
+@media screen and (max-width:400px)
+{
+     body{
+        background-color:blue;
+    }
+    .column
+   {
+       display:block;
+  width:100%;
+   }
+}
+
+  .row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Create four equal columns that floats next to eachother */
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Hide the slides by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Caption text */
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+img.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+</style>
+<script>
+  // Open the Modal
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+// Close the Modal
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+<br>
+<br>
+<br>
+<br>
+<br>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {box-sizing: border-box;}
+
+.img-comp-container {
+  position: relative;
+  height: 200px ; /*should be the same height as the images*/
+}
+
+.img-comp-img {
+  position: absolute;
+  width: auto;
+  height: auto;
+  overflow:hidden;
+}
+
+.img-comp-img img {
+  display:block;
+  vertical-align:middle;
+}
+
+.img-comp-slider {
+  position: absolute;
+  z-index:9;
+  cursor: ew-resize;
+  /*set the appearance of the slider:*/
+  width: 40px;
+  height: 40px;
+  background-color: #2196F3;
+  opacity: 0.7;
+  border-radius: 50%;
+}
+</style>
+<script>
+function initComparisons() {
+  var x, i;
+  /*find all elements with an "overlay" class:*/
+  x = document.getElementsByClassName("img-comp-overlay");
+  for (i = 0; i < x.length; i++) {
+    /*once for each "overlay" element:
+    pass the "overlay" element as a parameter when executing the compareImages function:*/
+    compareImages(x[i]);
+  }
+  function compareImages(img) {
+    var slider, img, clicked = 0, w, h;
+    /*get the width and height of the img element*/
+    w = img.offsetWidth;
+    h = img.offsetHeight;
+    /*set the width of the img element to 50%:*/
+    img.style.width = (w / 2) + "px";
+    /*create slider:*/
+    slider = document.createElement("DIV");
+    slider.setAttribute("class", "img-comp-slider");
+    /*insert slider*/
+    img.parentElement.insertBefore(slider, img);
+    /*position the slider in the middle:*/
+    slider.style.top = (h / 2) - (slider.offsetHeight / 2) + "px";
+    slider.style.left = (w / 2) - (slider.offsetWidth / 2) + "px";
+    /*execute a function when the mouse button is pressed:*/
+    slider.addEventListener("mousedown", slideReady);
+    /*and another function when the mouse button is released:*/
+    window.addEventListener("mouseup", slideFinish);
+    /*or touched (for touch screens:*/
+    slider.addEventListener("touchstart", slideReady);
+    /*and released (for touch screens:*/
+    window.addEventListener("touchend", slideFinish);
+    function slideReady(e) {
+      /*prevent any other actions that may occur when moving over the image:*/
+      e.preventDefault();
+      /*the slider is now clicked and ready to move:*/
+      clicked = 1;
+      /*execute a function when the slider is moved:*/
+      window.addEventListener("mousemove", slideMove);
+      window.addEventListener("touchmove", slideMove);
+    }
+    function slideFinish() {
+      /*the slider is no longer clicked:*/
+      clicked = 0;
+    }
+    function slideMove(e) {
+      var pos;
+      /*if the slider is no longer clicked, exit this function:*/
+      if (clicked == 0) return false;
+      /*get the cursor's x position:*/
+      pos = getCursorPos(e)
+      /*prevent the slider from being positioned outside the image:*/
+      if (pos < 0) pos = 0;
+      if (pos > w) pos = w;
+      /*execute a function that will resize the overlay image according to the cursor:*/
+      slide(pos);
+    }
+    function getCursorPos(e) {
+      var a, x = 0;
+      e = (e.changedTouches) ? e.changedTouches[0] : e;
+      /*get the x positions of the image:*/
+      a = img.getBoundingClientRect();
+      /*calculate the cursor's x coordinate, relative to the image:*/
+      x = e.pageX - a.left;
+      /*consider any page scrolling:*/
+      x = x - window.pageXOffset;
+      return x;
+    }
+    function slide(x) {
+      /*resize the image:*/
+      img.style.width = x + "px";
+      /*position the slider:*/
+      slider.style.left = img.offsetWidth - (slider.offsetWidth / 2) + "px";
+    }
+  }
+}
+</script>
+</head>
+<body>
+
+<h1>Us          Vs.        Dominos</h1>
+
+<p>Click and slide the blue slider to compare two images:</p>
+
+<div class="img-comp-container">
+  <div class="img-comp-img">
+    <img src="img566.jpg" width="300" height="200">
+  </div>
+  <div class="img-comp-img img-comp-overlay">
+    <img src="img66.jpg" width="300" height="200">
+  </div>
+</div>
+<br>
+<br>
+<br>
+
+
+<script>
+/*Execute a function that will execute an image compare function for each element with the img-comp-overlay class:*/
+initComparisons();
+</script>
